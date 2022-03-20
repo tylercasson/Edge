@@ -12,6 +12,18 @@
     width: 330px;
 }
 
+.post-feed .grid-item--width-2 {
+    width: 660px;
+}
+
+.post-feed .grid-item--width-3 {
+    width: 990px;
+}
+
+.post-feed .grid-item--width-4 {
+    width: 1320px;
+}
+
 .post-feed .post {
     position: relative;
     margin: 15px;
