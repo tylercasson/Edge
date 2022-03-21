@@ -4,6 +4,7 @@ $(function () {
     gallery();
     mobileMenu();
     feed();
+    post();
 });
 
 function video() {
@@ -58,9 +59,21 @@ function feed() {
     }
 
     pswp(
-        '.post-feed',
+        '.post-feed:not(.related)',
         '.grid-item:not(.grid-sizer)',
         '.post-lightbox',
+        '.post-caption',
+        false
+    );
+}
+
+function post() {
+    'use strict';
+    
+    pswp(
+        '.post-pswp-content',
+        '.post',
+        '.post-image',
         '.post-caption',
         false
     );

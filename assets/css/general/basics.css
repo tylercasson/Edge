@@ -142,3 +142,14 @@ hr::after {
         margin-left: 0;
     }
 }
+
+.frosted {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+@supports (backdrop-filter: none) {
+  .frosted {
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+  }
+}
