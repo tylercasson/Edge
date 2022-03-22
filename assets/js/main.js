@@ -73,7 +73,7 @@ function post() {
     pswp(
         '.post-pswp-content',
         '.post',
-        '.post-image',
+        '.post-trigger',
         '.post-caption',
         false
     );

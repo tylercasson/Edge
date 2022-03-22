@@ -60,6 +60,10 @@
   padding: 0 4px;
 }
 
+.post-caption-meta-tag > a {
+    text-decoration: underline;
+}
+
 .post-lightbox {
     position: absolute;
     right: 15px;
