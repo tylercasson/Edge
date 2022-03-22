@@ -67,6 +67,16 @@
     }
 }
 
+@media (max-width: 991px) {
+    .navbar-left {
+        flex: 3
+    }
+
+    .navbar-right {
+        flex: 1
+    }
+}
+
 @media (max-width: 1019px) {
     .site-header {
         padding: 0 15px;
