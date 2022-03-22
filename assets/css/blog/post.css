@@ -25,6 +25,15 @@
 
 .post-media {
     margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post-media .post-image {
+    max-height: 60vh;
+    width: auto;
+    margin: auto;
 }
 
 .post-media-wrapper {
@@ -62,6 +71,10 @@
 
 .post-caption-meta-tag > a {
     text-decoration: underline;
+}
+
+.post-trigger {
+    cursor: pointer;
 }
 
 .post-lightbox {
