@@ -90,9 +90,24 @@ function zipper(done) {
     ], handleError(done));
 }
 
-const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs', 'members/**/*.hbs'], hbs);
-const cssWatcher = () => watch('assets/css/**/*.css', css);
-const jsWatcher = () => watch('assets/js/**/*.js', js);
+function copyToDev(done) {
+    const filename = require('./package.json').name + '-live';
+    const destination = require('./package.json').config.live_development_theme_directory + filename;
+
+    pump([
+        src([
+            '**',
+            '!node_modules', '!node_modules/**',
+            '!dist', '!dist/**',
+            '!yarn-error.log'
+        ]),
+        dest(destination)
+    ], handleError(done));
+}
+
+const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs', 'members/**/*.hbs'], series(hbs, copyToDev));
+const cssWatcher = () => watch('assets/css/**/*.css', series(css, copyToDev));
+const jsWatcher = () => watch('assets/js/**/*.js', series(js, copyToDev));
 const watcher = parallel(hbsWatcher, cssWatcher, jsWatcher);
 const build = series(css, js);
 

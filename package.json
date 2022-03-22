@@ -58,7 +58,8 @@
                 "default": "You might also like...",
                 "group": "post"
             }
-        }
+        },
+        "live_development_theme_directory": "../../development/content/themes/"
     },
     "scripts": {
         "dev": "gulp",
